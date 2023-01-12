@@ -39,6 +39,7 @@
     $(window).trigger('scroll');
     $(window).trigger('resize');
     preloader();
+    loadGA();
     // loadAllGame();
     listCategory();
     isotopInit();
@@ -701,3 +702,14 @@ function open_fullscreen() {
 	  game.msRequestFullscreen();
 	}
 };
+function loadGA(){
+  var  r = document.createElement("script");
+r.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-FY2QX36J1B"), r.setAttribute("type", "text/javascript"), r.setAttribute("crossOrigin", "anonymous"),  r.onload = function (){
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FY2QX36J1B');
+
+  },document.head.appendChild(r);
+}

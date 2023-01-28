@@ -1041,6 +1041,13 @@ kbd {
   -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr);
 }
+.cs-grid_4 {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: 1fr;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
 
 .cs-gap_30 {
   grid-gap: 30px;

@@ -39,16 +39,16 @@
     $(window).trigger('scroll');
     $(window).trigger('resize');
     preloader();
-    loadGA();
+    // loadGA();
     // loadAllGame();
     listCategory();
     isotopInit();
     var search = window.location.search;
     console.log(search);
-    if(search){
-        loadGame(search.replace('?g=',''));
-        //addAdsClass();
-    }
+    // if(search){
+    //     loadGame(search.replace('?g=',''));
+    //     //addAdsClass();
+    // }
   });
 
   $(function () {
@@ -517,18 +517,39 @@
                 str_cat += tmp_cat[index]+" ";
                 
               }
+              if(item.domain == 1){
+                img = `https://slope-game.github.io/file/${item.slug}/logo.png`;
+              } else if(item.domain == 2) {
+                  img = `https://slope-game.github.io/rungame/${item.slug}/logo.png`;
+              } else if(item.domain == 3) {
+                img = `/assets/logo/${item.slug}.png`;
+              } else if(item.domain == 4) {
+                img = `/assets/logo/${item.slug}.png`;
+                if(item.slug.indexOf("fnaf2") != -1){
+                  img = `/assets/logo/${item.img}.png`;
+                }
+              } else if(item.domain == 5) {
+                // img = `https://webglmath.github.io/${item.slug}/logo.png`;
+                img = `/assets/logo/${item.slug}.png`;
+              } else if(item.domain == 6) {
+                img = `https://ubg77.github.io/edit/${item.slug}/logo.png`;
+              } else if(item.domain == 7) {
+                img = `https://slope-game.github.io/newgame/${item.slug}/logo.png`;
+              } else if(item.domain == 8) {
+                img = `https://slope-game.github.io/${item.slug}/logo.png`;
+              }
               var tmp = `
               <div class="cs-isotop_item ${str_cat}">
               <div class="cs-card cs-style4 cs-box_shadow cs-white_bg">
-                <a href="/play.html?g=${item.slug}" class="cs-card_thumb cs-zoom_effect">
-                  <img src="assets/logo/${img}.png" style="height:220px" alt="Image" class="cs-zoom_item">
+                <a href="/game/${item.slug}.html" class="cs-card_thumb cs-zoom_effect">
+                  <img src="${img}" style="height:220px" alt="Image" class="cs-zoom_item">
                 </a>
                 <div class="cs-card_info">
-                   <a href="/play.html?g=${item.slug}" class="cs-avatar cs-white_bg">
+                   <a href="/game/${item.slug}.html" class="cs-avatar cs-white_bg">
                     <img src="/assets/img/play.svg" alt="Play">
                     
                   </a>
-                  <h3 class="cs-card_title"><a href="/play.html?g=${item.slug}">${item.title}</a></h3>
+                  <h3 class="cs-card_title"><a href="/game/${item.slug}.html">${item.title}</a></h3>
                 </div>
               </div>
             </div>`;
@@ -593,22 +614,43 @@
                 str_cat += tmp_cat[index]+" ";
                 
               }
+              if(item.domain == 1){
+                  img = `https://slope-game.github.io/file/${item.slug}/logo.png`;
+              } else if(item.domain == 2) {
+                  img = `https://slope-game.github.io/rungame/${item.slug}/logo.png`;
+              } else if(item.domain == 3) {
+                img = `/assets/logo/${item.slug}.png`;
+              } else if(item.domain == 4) {
+                img = `/assets/logo/${item.slug}.png`;
+                if(item.slug.indexOf("fnaf2") != -1){
+                  img = `/assets/logo/${item.img}.png`;
+                }
+              } else if(item.domain == 5) {
+                // img = `https://webglmath.github.io/${item.slug}/logo.png`;
+                img = `/assets/logo/${item.slug}.png`;
+              } else if(item.domain == 6) {
+                img = `https://ubg77.github.io/edit/${item.slug}/logo.png`;
+              } else if(item.domain == 7) {
+                img = `https://slope-game.github.io/newgame/${item.slug}/logo.png`;
+              } else if(item.domain == 8) {
+                img = `https://slope-game.github.io/${item.slug}/logo.png`;
+              }
               var tmp = `<div class="cs-card cs-style3 cs-box_shadow cs-white_bg">
-              <a href="/play.html?g=${item.slug}" class="cs-card_thumb cs-zoom_effect">
-                <img src="/assets/logo/${img}.png" style="width:136px !important;height:136px" alt="${item.title} logo" class="cs-zoom_item">
-              </a>
-              <a href="/play.html?g=${item.slug}" class="cs-avatar">
-                <img src="/assets/logo/${img}.png" alt="${item.title} logo">
-                <span class="cs-avatar_status"></span>
-              </a>
-              <div class="cs-card_info">
-                <h3 class="cs-card_title"><a href="/play.html?g=${item.slug}">${item.title}</a></h3>
-                <div class="cs-card_subtitle">
-                  <i class="far fa-check-circle fa-fw"></i>
-                  <span>${item.cat}</span>
-                </div>
-              </div>
-            </div>`;
+                  <a href="/game/${item.slug}.html" class="cs-card_thumb cs-zoom_effect">
+                    <img src="${img}" style="width:136px !important;height:136px" alt="${item.title} logo" class="cs-zoom_item">
+                  </a>
+                  <a href="/game/${item.slug}.html" class="cs-avatar">
+                    <img src="${img}" alt="${item.title} logo">
+                    <span class="cs-avatar_status"></span>
+                  </a>
+                  <div class="cs-card_info">
+                    <h3 class="cs-card_title"><a href="/game/${item.slug}.html">${item.title}</a></h3>
+                    <div class="cs-card_subtitle">
+                      <i class="far fa-check-circle fa-fw"></i>
+                      <span>${item.cat}</span>
+                    </div>
+                  </div>
+                </div>`;
             html += tmp;
             }
           }

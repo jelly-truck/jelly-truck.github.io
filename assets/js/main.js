@@ -633,7 +633,7 @@
               } else if(item.domain == 7) {
                 img = `https://slope-game.github.io/newgame/${item.slug}/logo.png`;
               } else if(item.domain == 8) {
-                img = `https://slope-game.github.io/${item.slug}/logo.png`;
+                img = `https://ubg77.github.io/updatefaqs/${item.slug}/logo.png`;
               }
               var tmp = `<div class="cs-card cs-style3 cs-box_shadow cs-white_bg">
                   <a href="/game/${item.slug}.html" class="cs-card_thumb cs-zoom_effect">

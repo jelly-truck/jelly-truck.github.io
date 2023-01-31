@@ -39,7 +39,7 @@
     $(window).trigger('scroll');
     $(window).trigger('resize');
     preloader();
-    // loadGA();
+    loadGA();
     // loadAllGame();
     listCategory();
     isotopInit();

@@ -42,6 +42,7 @@
     loadGA();
     // loadAllGame();
     listCategory();
+    listSimilar();
     isotopInit();
     var search = window.location.search;
     console.log(search);
@@ -656,6 +657,90 @@
           }
           // console.log(html);
           $('#catgame').html(html);
+         
+  
+        })
+      }
+  }
+  function listSimilar(){
+    var catStr = $('#cat').val();
+    
+    if ($.exists('#hotpick')) {
+    var tmp_catStr = capitalizeFirstLetter(catStr);
+    console.log(tmp_catStr);
+    fetch("/assets/game/hotpick.json",{
+      headers: {
+          'Content-Type': 'application/json',
+          },
+      }).then(response => response.json())
+      .then(data => {
+          listGame = data;
+          var html = "";
+          for (var j=0; j < listGame.length; j++) {
+            if ((j+1)%4 != 0) {
+              var item = listGame[j];
+              var img = item.slug;
+              if(item.img){
+                  img = item.img;
+              }
+              var cat = item.cat;
+              cat = cat.toLowerCase();
+              var tmp_cat = cat.split(",");
+              var str_cat = '';
+              for (let index = 0; index < tmp_cat.length; index++) {
+                str_cat += tmp_cat[index]+" ";
+                
+              }
+              if(item.domain == 1){
+                  img = `https://slope-game.github.io/file/${item.slug}/logo.png`;
+              } else if(item.domain == 2) {
+                  img = `https://slope-game.github.io/rungame/${item.slug}/logo.png`;
+              } else if(item.domain == 3) {
+                img = `/assets/logo/${item.slug}.png`;
+              } else if(item.domain == 4) {
+                img = `/assets/logo/${item.slug}.png`;
+                if(item.slug.indexOf("fnaf2") != -1){
+                  img = `/assets/logo/${item.img}.png`;
+                }
+              } else if(item.domain == 5) {
+                // img = `https://webglmath.github.io/${item.slug}/logo.png`;
+                img = `/assets/logo/${item.slug}.png`;
+              } else if(item.domain == 6) {
+                img = `https://ubg77.github.io/edit/${item.slug}/logo.png`;
+              } else if(item.domain == 7) {
+                img = `https://slope-game.github.io/newgame/${item.slug}/logo.png`;
+              } else if(item.domain == 8) {
+                img = `https://ubg77.github.io/updatefaqs/${item.slug}/logo.png`;
+              }
+              var tmp = `<div class="cs-card cs-style3 cs-box_shadow cs-white_bg">
+                  <a href="/game/${item.slug}.html" class="cs-card_thumb cs-zoom_effect">
+                    <img src="${img}" style="width:136px !important;height:136px" alt="${item.title} logo" class="cs-zoom_item">
+                  </a>
+                  <a href="/game/${item.slug}.html" class="cs-avatar">
+                    <img src="${img}" alt="${item.title} logo">
+                    <span class="cs-avatar_status"></span>
+                  </a>
+                  <div class="cs-card_info">
+                    <h3 class="cs-card_title"><a href="/game/${item.slug}.html">${item.title}</a></h3>
+                    <div class="cs-card_subtitle">
+                      <i class="far fa-check-circle fa-fw"></i>
+                      <span>${item.cat}</span>
+                    </div>
+                  </div>
+                </div>`;
+            html += tmp;
+            } else {
+              html += `<ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-7889675448259925"
+              data-ad-slot="5691700407"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+         `
+            }
+          }
+          // console.log(html);
+          $('#hotpick').html(html);
          
   
         })

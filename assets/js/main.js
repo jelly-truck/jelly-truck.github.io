@@ -730,12 +730,15 @@
                 </div>`;
             html += tmp;
             } else {
-              html += `<ins class="adsbygoogle"
+              html += `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7889675448259925"
+              crossorigin="anonymous"></script><ins class="adsbygoogle"
               style="display:block"
               data-ad-client="ca-pub-7889675448259925"
               data-ad-slot="5691700407"
               data-ad-format="auto"
-              data-full-width-responsive="true"></ins>
+              data-full-width-responsive="true"></ins><script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+               </script>
          `
             }
           }

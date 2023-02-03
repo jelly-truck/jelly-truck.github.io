@@ -734,9 +734,7 @@
               crossorigin="anonymous"></script><ins class="adsbygoogle"
               style="display:inline-block;width:230px;height:230px"
               data-ad-client="ca-pub-7889675448259925"
-              data-ad-slot="5691700407"
-              data-ad-format="auto"
-              data-full-width-responsive="true"></ins><script>
+              data-ad-slot="5691700407"></ins><script>
               (adsbygoogle = window.adsbygoogle || []).push({});
                </script></div>
          `

@@ -730,7 +730,7 @@
                 </div>`;
             html += tmp;
             } else {
-              html += `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7889675448259925"
+              html += `<div class="cs-card cs-style3 cs-box_shadow cs-white_bg"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7889675448259925"
               crossorigin="anonymous"></script><ins class="adsbygoogle"
               style="display:inline-block;width:230px;height:230px"
               data-ad-client="ca-pub-7889675448259925"
@@ -738,7 +738,7 @@
               data-ad-format="auto"
               data-full-width-responsive="true"></ins><script>
               (adsbygoogle = window.adsbygoogle || []).push({});
-               </script>
+               </script></div>
          `
             }
           }

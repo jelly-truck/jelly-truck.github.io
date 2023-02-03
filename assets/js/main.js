@@ -732,7 +732,7 @@
             } else {
               html += `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7889675448259925"
               crossorigin="anonymous"></script><ins class="adsbygoogle"
-              style="display:block"
+              style="display:inline-block;width:230px;height:230px"
               data-ad-client="ca-pub-7889675448259925"
               data-ad-slot="5691700407"
               data-ad-format="auto"
